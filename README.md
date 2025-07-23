@@ -4,7 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Build](https://github.com/maxviazov/audittrail/actions/workflows/build.yml/badge.svg)](https://github.com/maxviazov/audittrail/actions)
 
-**AuditTrail** is a real-time, centralized event auditing solution for distributed systems and microservices. Built with transparency, integrity, and traceability in mind, it allows teams to:
+**AuditTrail** is a real-time, centralized event auditing solution for distributed systems and microservices. Built with
+transparency, integrity, and traceability in mind, it allows teams to:
 
 - 📌 Record critical events
 - 🔐 Maintain secure, immutable logs
@@ -14,10 +15,10 @@
 
 ## 🔧 Tech Stack
 
-| Core    | Messaging | Storage     | API    | Observability    |
-|---------|-----------|-------------|--------|------------------|
-| Go 1.22+| Kafka     | PostgreSQL  | gRPC   | Prometheus-ready |
-| Redis   | Protobuf  | pgxpool     | TLS/MTLS | Zerolog         |
+| Core     | Messaging | Storage    | API      | Observability    |
+|----------|-----------|------------|----------|------------------|
+| Go 1.22+ | Kafka     | PostgreSQL | gRPC     | Prometheus-ready |
+| Redis    | Protobuf  | pgxpool    | TLS/MTLS | Zerolog          |
 
 ---
 
@@ -56,6 +57,7 @@
 ## 📌 Roadmap
 
 ### 🟢 v0.1.0 — Initial MVP (in progress)
+
 - [x] Repo setup with README and structure
 - [ ] gRPC server scaffolding
 - [ ] PostgreSQL connector (pgxpool)
@@ -65,12 +67,14 @@
 - [ ] Basic CLI for local test
 
 ### 🔵 v0.2.0 — Query API & Observability
+
 - [ ] Query endpoint (GET event by ID)
 - [ ] Prometheus metrics
 - [ ] TLS/mTLS support
 - [ ] Integration tests
 
 ### 🟣 v0.3.0 — Enterprise Features
+
 - [ ] Role-based querying (RBAC)
 - [ ] Export to Elastic
 - [ ] Web UI prototype (optional)

@@ -1,0 +1,46 @@
+run:
+  timeout: 2m
+  tests: true
+
+linters:
+  enable:
+    - errcheck
+    - govet
+    - revive
+    - staticcheck
+    - unused
+    - gosimple
+    - typecheck
+    - structcheck
+    - deadcode
+    - gofmt
+    - goimports
+    - depguard
+
+linters-settings:
+  revive:
+    severity: warning
+    ignore-generated-header: true
+    rules:
+      - name: indent-error-flow
+        disabled: true
+
+  depguard:
+    list-type: blacklist
+    packages:
+      - fmt
+    packages-with-error-message:
+      fmt: "Please use your project's logger (zerolog) instead of fmt"
+
+issues:
+  exclude-use-default: false
+  exclude:
+    - "should have comment or be unexported"
+    - "cyclomatic complexity"
+
+  # Игнорируем тесты
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - errcheck
+        - revive

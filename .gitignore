@@ -1,9 +1,7 @@
 ### 🧠 JetBrains IDEs (GoLand, IntelliJ, etc.)
 .idea/
 *.iml
-.idea_modules/
 
-# User-specific & generated files inside .idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
@@ -31,13 +29,19 @@
 *.test
 *.out
 *.coverprofile
-*.code-workspace
 
 # go.work file (multi-module)
 go.work
 
-# If using vendoring (optional, remove # if not needed)
+# Optional vendoring
 # vendor/
+
+### 🧪 Protobuf / Buf
+*.pb.go
+*.pb.gw.go
+*.swagger.json
+buf.gen.yaml.lock
+gen/
 
 ### 🔐 Secrets and local config
 .env
@@ -54,4 +58,3 @@ go.work
 .DS_Store
 .AppleDouble
 .LSOverride
-

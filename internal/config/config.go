@@ -18,7 +18,7 @@ type Config struct {
 
 func New() (*Config, error) {
 	v := viper.New()
-	v.SetConfigName("gonfig")
+	v.SetConfigName("config")
 	v.SetConfigType("yaml")
 	v.AddConfigPath(".")
 	v.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))

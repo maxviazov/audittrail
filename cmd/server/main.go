@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/maxviazov/audittrail/config"
+	"github.com/maxviazov/audittrail/internal/config"
 	"github.com/maxviazov/audittrail/pkg/logger"
 	"log"
 )

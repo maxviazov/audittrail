@@ -9,3 +9,7 @@ type Logger struct {
 	zerolog.Logger
 	logFile *os.File
 }
+
+func New(consoleLevel, fileLevel string) (*Logger, error) {
+
+}

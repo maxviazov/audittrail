@@ -1,0 +1,40 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "validate/validate.proto";
+package proto;
+option go_package = "github.com/maxviazov/audittrail/internal/api;api";
+
+service AuditService {
+  rpc LogEvent(AuditEvent) returns (LogResponse);
+  rpc GetEventByID(GetRequest) returns (AuditEvent);
+  rpc GetEventByResource(ListRequest) returns (ListResponse);
+}
+
+message AuditEvent {
+  string id = 1;
+  google.protobuf.Timestamp timestamp = 2 [(validate.rules).timestamp = {
+    required: true,
+    gt_now: false,
+  }];
+  string actor = 3;
+  string action = 4;
+  string resource = 5;
+  map<string, string> metadata = 6;
+}
+
+message LogResponse {
+  string status = 1;
+  string id = 2;
+}
+
+message GetRequest {
+  string id = 1;
+}
+
+message ListRequest {
+  string resource = 1;
+}
+
+message ListResponse {
+  repeated AuditEvent events = 1;
+}

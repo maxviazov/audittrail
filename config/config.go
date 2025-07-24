@@ -13,19 +13,19 @@ type logConfig struct {
 }
 
 type Config struct {
-	Log logConfig `mapstructure:"log"`
+	Log logConfig `mapstructure:"logging"`
 }
 
 func New() (*Config, error) {
 	v := viper.New()
-	v.SetConfigName("config")
+	v.SetConfigName("gonfig")
 	v.SetConfigType("yaml")
 	v.AddConfigPath(".")
 	v.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
 	v.AutomaticEnv()
 
-	v.SetDefault("log.console_level", "info")
-	v.SetDefault("log.file_level", "debug")
+	v.SetDefault("logging.console_level", "info")
+	v.SetDefault("logging.file_level", "debug")
 
 	if err := v.ReadInConfig(); err != nil {
 		return nil, fmt.Errorf("error reading config file: %w", err)

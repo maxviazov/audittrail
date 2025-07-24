@@ -55,5 +55,3 @@ go.work
 .AppleDouble
 .LSOverride
 
-### 🔥 Explicit allow for go.sum (keep it tracked)
-!/go.sum
